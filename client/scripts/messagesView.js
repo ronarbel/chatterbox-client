@@ -10,7 +10,7 @@ var MessagesView = {
     App.fetch((data) => {
       Messages = data;
       Messages.results.forEach((message) => {
-        if (message.username || message.texts) {
+        if (message.username || message.text) {
           MessagesView.renderMessage(message);
         }
       });
