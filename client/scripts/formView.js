@@ -13,7 +13,7 @@ var FormView = {
     event.preventDefault();
     
     console.log('click!');
-    Parse.create(messages);
+    //Parse.create(messages);
   },
 
   setStatus: function(active) {
