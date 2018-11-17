@@ -4,6 +4,8 @@ var FormView = {
 
   initialize: function() {
     FormView.$form.on('submit', FormView.handleSubmit);
+    
+    //FormView.$form.on()
   },
 
   handleSubmit: function(event) {
