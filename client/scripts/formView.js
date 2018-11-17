@@ -12,8 +12,15 @@ var FormView = {
     // Stop the browser from submitting the form
     event.preventDefault();
     
+    userMessage = {
+      username: 'Washington Walden > Quian',
+      text: $('#message').val()
+    }
+    
+    
+    Parse.create(userMessage);
+    
     console.log('click!');
-    //Parse.create(messages);
   },
 
   setStatus: function(active) {

@@ -3,11 +3,6 @@ var MessagesView = {
   $chats: $('#chats'),
 
   initialize: function() {
-    // Messages = App.fetch((data) => { 
-    //   Messages = data;
-    //   MessagesView.render();
-    // })
-    // console.log(Messages)
     MessagesView.render();
   },
 
@@ -15,7 +10,7 @@ var MessagesView = {
     App.fetch((data) => {
       Messages = data;
       Messages.results.forEach((message) => {
-        if (message.username) {
+        if (message.username || message.texts) {
           MessagesView.renderMessage(message);
         }
       });
