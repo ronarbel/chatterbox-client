@@ -4,11 +4,18 @@ var RoomsView = {
   $select: $('#rooms select'),
 
   initialize: function() {
-    //RoomsView.render();
+    RoomsView.render();
   },
 
   render: function() {
-    RoomsView.renderRoom()
+    App.fetch((data) => {
+      Rooms = data;
+      Rooms.results.forEach((message) => {
+        if (message.roomname) {
+          RoomsView.renderRoom(message.roomname);
+        }
+      });
+    });
   },
   
   renderRoom: function(roomName) {
