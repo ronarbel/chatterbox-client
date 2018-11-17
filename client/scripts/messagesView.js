@@ -3,22 +3,26 @@ var MessagesView = {
   $chats: $('#chats'),
 
   initialize: function() {
-    //similar to formView event listener
+    // Messages = App.fetch((data) => { 
+    //   Messages = data;
+    //   MessagesView.render();
+    // })
+    // console.log(Messages)
     MessagesView.render();
   },
 
   render: function() {
-    // how to display messages in 'messages.js'
-    //jquery to modify html > index
     App.fetch((data) => {
-      data.results.forEach((message) => {
-        $('#chats').append(MessageView.render(message));
+      Messages = data;
+      Messages.results.forEach((message) => {
+        if (message.username) {
+          MessagesView.renderMessage(message);
+        }
       });
     });
   },
   
   renderMessage: function(message) {
-    $('#chats').append('<p></p>');
+    $('#chats').append(MessageView.render(message));
   }
-
 };
