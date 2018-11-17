@@ -7,10 +7,13 @@ var FormView = {
   },
 
   handleSubmit: function(event) {
+    //look up automoatically passed in event object upon initialize
+    //look up event preventDefault
     // Stop the browser from submitting the form
     event.preventDefault();
     
     console.log('click!');
+    Parse.create(messages);
   },
 
   setStatus: function(active) {
