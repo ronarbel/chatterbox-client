@@ -10,10 +10,10 @@ var MessagesView = {
   render: function() {
     // how to display messages in 'messages.js'
     //jquery to modify html > index
-  }
+  },
   
-  // renderMessage: function() {
-  //   //messageView.render(message);
-  // }
+  renderMessage: function(message) {
+    $('#chats').append('<');
+  }
 
 };
